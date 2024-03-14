@@ -8,7 +8,7 @@ env:
           # Store URL, like your-store.myshopify.com
           SHOPIFY_FLAG_STORE: 'sharma-brands-test-himanshu-tayal.myshopify.com'
           # Password generated from Theme Access app
-          SHOPIFY_CLI_THEME_TOKEN: ${{ SHOPIFY_CLI_THEME_TOKEN }}
+          SHOPIFY_CLI_THEME_TOKEN: 
           SHOPIFY_CLI_TTY: 0
 
 jobs:    
