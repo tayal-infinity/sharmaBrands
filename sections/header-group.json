@@ -44,15 +44,15 @@
         "padding_bottom": 20
       }
     },
-    "age_gate_CHAi6e": {
+    "age-gate": {
       "type": "age-gate",
       "settings": {
       }
     }
   },
   "order": [
+    "age-gate",
     "announcement-bar",
-    "header",
-    "age_gate_CHAi6e"
+    "header"
   ]
 }
