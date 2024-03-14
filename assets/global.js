@@ -5,7 +5,7 @@ function getFocusableElements(container) {
     )
   );
 }
-document.addEventListener("DOMContentLoaded", ()=>{
+
 
 const setCookie = (name, value, days) => {
 	let expires = '';
@@ -104,7 +104,6 @@ switch (checkAge) {
 		});
 		break;
 }
-})
 
 document.querySelectorAll('[id^="Details-"] summary').forEach((summary) => {
   summary.setAttribute('role', 'button');
