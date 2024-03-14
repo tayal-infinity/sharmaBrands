@@ -1,0 +1,74 @@
+name: Shopify CI/CD
+on:
+  push:
+    branches: [ "dev", "main" ]
+  pull_request:
+    branches: [ "dev", "main" ]
+  workflow_dispatch:
+env:
+  SHOPIFY_FLAG_STORE: ${{ vars.SHOPIFY_FLAG_STORE }}
+  SHOPIFY_CLI_THEME_TOKEN: ${{ secrets.SHOPIFY_CLI_THEME_TOKEN }} 
+  THEME_NAME: ${{ vars.THEME_NAME }} 
+  SHOPIFY_CLI_TTY: 0
+
+jobs:    
+  deploy_develop:
+    runs-on: ubuntu-latest
+    environment: development
+    if: github.ref == 'refs/heads/dev'
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js amd Ruby 3
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - uses: ruby/setup-ruby@ec02537da5712d66d4d50a0f33b7eb52773b5ed1
+        with:
+          ruby-version: '3.1'
+          bundler-cache: true
+
+      - name: Install dependencies and build
+        run: |
+          npm install
+          npm run build
+      
+      - name: Install Shopify CLI and Theme
+        run: |
+          npm install --global --unsafe-perm @shopify/cli@latest @shopify/theme@latest
+
+      - name: Deploy to development environment
+        run: |
+          #shopify theme push --theme sharmaBrands/dev 
+          shopify theme push -a --nodelete --ignore config/settings_data.json templates//.json templates/.json locales/.json --theme sharmaBrands/dev 
+
+  deploy_production:
+    runs-on: ubuntu-latest
+    environment: production
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js amd Ruby 3
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - uses: ruby/setup-ruby@ec02537da5712d66d4d50a0f33b7eb52773b5ed1
+        with:
+          ruby-version: '3.1'
+          bundler-cache: true
+
+      - name: Install dependencies and build
+        run: |
+          npm install
+          npm run build
+          
+      - name: Install Shopify CLI and Theme
+        run: |
+          npm install --global --unsafe-perm @shopify/cli@latest @shopify/theme@latest
+      
+      - name: Deploy to production environment
+        run: |
+          shopify theme push -a --nodelete --ignore config/settings_data.json templates//.json templates/.json locales/.json --theme himanshuTayal/main
