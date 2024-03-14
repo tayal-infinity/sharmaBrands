@@ -5,9 +5,8 @@ on:
 
   workflow_dispatch:
 env:
-  SHOPIFY_FLAG_STORE: ${{ vars.SHOPIFY_FLAG_STORE }}
+  SHOPIFY_FLAG_STORE: ${{ secrets.SHOPIFY_FLAG_STORE }}
   SHOPIFY_CLI_THEME_TOKEN: ${{ secrets.SHOPIFY_CLI_THEME_TOKEN }} 
-  THEME_NAME: ${{ vars.THEME_NAME }} 
   SHOPIFY_CLI_TTY: 0
 
 jobs:    
