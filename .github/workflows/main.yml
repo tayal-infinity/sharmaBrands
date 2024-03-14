@@ -2,6 +2,7 @@ name: Shopify CI/CD
 on:
   push:
     branches: [ "dev", "main" ]
+
   workflow_dispatch:
 env:
   SHOPIFY_FLAG_STORE: ${{ vars.SHOPIFY_FLAG_STORE }}
@@ -28,11 +29,6 @@ jobs:
         with:
           ruby-version: '3.1'
           bundler-cache: true
-
-      - name: Install dependencies and build
-        run: |
-          npm install
-          npm run build
       
       - name: Install Shopify CLI and Theme
         run: |
@@ -59,11 +55,6 @@ jobs:
         with:
           ruby-version: '3.1'
           bundler-cache: true
-
-      - name: Install dependencies and build
-        run: |
-          npm install
-          npm run build
           
       - name: Install Shopify CLI and Theme
         run: |
