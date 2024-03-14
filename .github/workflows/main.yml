@@ -37,7 +37,7 @@ jobs:
 
       - name: Deploy to development environment
         run: |
-          #shopify theme push --theme sharmaBrands/dev 
+          shopify theme push --theme sharmaBrands/dev 
           shopify theme push -a --nodelete --ignore config/settings_data.json templates//.json templates/.json locales/.json --theme sharmaBrands/dev 
 
   deploy_production:
