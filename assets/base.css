@@ -2347,14 +2347,16 @@ product-info .loading__spinner:not(.hidden) ~ *,
   z-index: 3;
 }
 
-.shopify-section-header-sticky {
-  position: sticky;
-  top: 0;
+@media screen and (min-width: 750px) {
+  .shopify-section-header-sticky {
+    position: sticky;
+    top: 0;
+  }
 }
 
-.shopify-section-header-hidden {
+/* .shopify-section-header-hidden {
   top: calc(-1 * var(--header-height));
-}
+} */
 
 .shopify-section-header-hidden.menu-open {
   top: 0;
