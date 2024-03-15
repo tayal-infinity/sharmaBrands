@@ -43,15 +43,9 @@
         "padding_top": 20,
         "padding_bottom": 20
       }
-    },
-    "age-gate": {
-      "type": "age-gate",
-      "settings": {
-      }
     }
   },
   "order": [
-    "age-gate",
     "announcement-bar",
     "header"
   ]
