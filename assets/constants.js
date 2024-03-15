@@ -44,9 +44,15 @@ removeAllBR();
 const html = document.querySelector('html');
 const body = document.querySelector('body');
 const sectionAge = document.querySelector('.section-age');
+<<<<<<< HEAD
 if(sectionAge){
     const infoNotification = sectionAge.querySelector('.info-group.notification');
 	const infoWelcome = sectionAge.querySelector('.info-group.welcome');
+=======
+const infoWelcome = sectionAge.querySelector('.info-group.welcome');
+const infoNotification = sectionAge.querySelector('.info-group.notification');
+// const preloader = document.querySelector('.preloader');
+>>>>>>> 1825d63ca7ed5c9a4fb67aebda5056345f2edd28
 const btn_success = document.querySelector('#btn-success');
 const btn_error = document.querySelector('#btn-error');
 
@@ -75,7 +81,10 @@ const errorAge = () => {
 	infoWelcome.classList.toggle('hide');
 	infoNotification.classList.toggle('hide');
 	console.log('error age');
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1825d63ca7ed5c9a4fb67aebda5056345f2edd28
 };
 
 let checkAge = getCookie('gate');
@@ -104,5 +113,8 @@ switch (checkAge) {
 			errorAge();
 		});
 		break;
+<<<<<<< HEAD
 }
+=======
+>>>>>>> 1825d63ca7ed5c9a4fb67aebda5056345f2edd28
 }
