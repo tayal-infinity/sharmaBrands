@@ -1,4 +1,4 @@
-<div id="shopify-section-video-first-load" class="shopify-section video-first-load" style="height: 863px;">
+
     <style>
 .video-first-load{-webkit-transition:.2s;transition:.2s;height:calc(100vh - 72px)}@media screen and (min-width: 992px){.video-first-load{height:100vh}}.video-first-load--hidden{display:none}.video-first-load .video-first-load__item-video{position:relative;padding:5px;margin:155px 20px 50px;height:calc(100% - 207px);border:2px solid var(--color-links)}@media screen and (min-width: 767px){.video-first-load .video-first-load__item-video{padding:14px;margin:32px 32px 24px;height:calc(100% - 62px)}}@media screen and (min-width: 992px){.video-first-load .video-first-load__item-video{height:calc(100vh - 58px)}}.video-first-load .video-first-load__item-video .border-img{position:absolute;top:0;left:0;width:100%;height:100%;z-index:-1;pointer-events:none;margin:0;display:none}@media screen and (min-width: 767px){.video-first-load .video-first-load__item-video .border-img{display:block}}.video-first-load .video-first-load__item-video .border-img.border-h:before,.video-first-load .video-first-load__item-video .border-img.border-h:after{content:"";position:absolute;top:3px;left:0;width:100%;height:100%;background-position:top;border-radius:17px;background-image:url(/cdn/shop/files/dot_border_black.svg);background-size:7px;background-repeat:repeat-x}.video-first-load .video-first-load__item-video .border-img.border-h:after{background-position:bottom;top:-3px}.video-first-load .video-first-load__item-video .border-img.border-v:before,.video-first-load .video-first-load__item-video .border-img.border-v:after{content:"";position:absolute;top:0;left:3px;width:100%;height:100%;background-position:left;border-radius:17px;background-image:url(/cdn/shop/files/dot_border_black.svg);background-size:7px;background-repeat:repeat-y}.video-first-load .video-first-load__item-video .border-img.border-v:after{background-position:right;left:-3px}.video-first-load .video-first-load__item-video .video{height:100%;width:100%;-o-object-fit:cover;object-fit:cover}.video-first-load .video-first-load__item-video .text_on_video{position:absolute;top:-125px;left:50%;-webkit-transform:translate(-50%,0%);transform:translate(-50%);width:80%;max-width:285px}@media screen and (min-width: 767px){.video-first-load .video-first-load__item-video .text_on_video{-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);width:-webkit-fit-content;width:-moz-fit-content;width:fit-content;top:51.5%;width:31.5%;max-width:initial}}.video-first-load .video-first-load__item-video .text_on_video p{color:#f7f3e8;letter-spacing:.4em;line-height:1.5em;text-align:center;font-family:var(--font-Calder-family);text-transform:uppercase;font-size:14px}.video-first-load .video-first-load__item-video .text_on_video svg{margin-bottom:10px;width:100%;height:100%}
     </style>
@@ -85,14 +85,14 @@
 </clipPath>
 </defs>
 </svg>
-</div></div>
-
 </div>
+</div>
+
 <script>
 function videoFirstLoad() {
     let itemVideo = document.querySelector(".video-first-load");
-    const header = document.querySelector(".header__pop-up-wrap")
-      , headerPlug = document.querySelector(".section-header-2");
+    const header = document.querySelector(".header-wrapper")
+      , headerPlug = document.querySelector(".section-header");
     let itemVideoTotalHeight;
     const headerTotalHeight = parseInt(getComputedStyle(header).height) + parseInt(getComputedStyle(header).marginTop) + parseInt(getComputedStyle(header).marginBottom);
     let count;
@@ -132,10 +132,10 @@ videoFirstLoad();
 </script>
 {% schema %}
 {
-  "name": "first-video-section",
-  "class": "first-video-section",
+  "name": "video-first-load",
+  "class": "video-first-load",
 
-  "settings": [
+  "settings": [ 
     {
       "type": "image_picker",
       "id": "image",
@@ -144,7 +144,7 @@ videoFirstLoad();
   ],
   "presets": [
     {
-      "name": "first-video-section"
+      "name": "video-first-load"
     }
   ]
 }

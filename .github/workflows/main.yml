@@ -10,9 +10,9 @@ env:
           # Password generated from Theme Access app
           SHOPIFY_CLI_THEME_TOKEN: 
           SHOPIFY_CLI_TTY: 0
-
+ 
 jobs:    
-
+ 
 
   deploy_develop:
     runs-on: ubuntu-latest
@@ -34,6 +34,10 @@ jobs:
       - name: Install Shopify CLI and Theme
         run: |
           npm install --global --unsafe-perm @shopify/cli@latest @shopify/theme@latest
+
+      - name: test
+        run: |
+           shopify theme check    
 
       - name: Deploy to development environment
         run: |
@@ -61,6 +65,10 @@ jobs:
       - name: Install Shopify CLI and Theme
         run: |
           npm install --global --unsafe-perm @shopify/cli@latest @shopify/theme@latest
+
+      - name: test
+        run: |
+         shopify theme check    
       
       - name: Deploy to production environment
         run: |
